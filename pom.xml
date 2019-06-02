@@ -8,10 +8,10 @@
 		<version>2.2.0.M3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kwargs</groupId>
-	<artifactId>poll</artifactId>
+	<groupId>com.kwargss</groupId>
+	<artifactId>pollarr</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>poll</name>
+	<name>pollarr</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
