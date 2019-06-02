@@ -1,13 +1,13 @@
-package com.kwargs.poll;
+package com.kwargss.pollarr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PollApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PollApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

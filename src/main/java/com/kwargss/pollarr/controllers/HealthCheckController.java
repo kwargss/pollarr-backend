@@ -1,4 +1,4 @@
-package com.kwargs.poll.controllers;
+package com.kwargss.pollarr.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
