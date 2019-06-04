@@ -12,7 +12,7 @@ public class PollService {
     private PollRepository pollRepository;
 
     public void create(CreatePollRequest pollRequest) {
-        pollRepository.createSimplePoll(pollRequest);
+//        pollRepository.createSimplePoll(pollRequest);
     }
 
 }
