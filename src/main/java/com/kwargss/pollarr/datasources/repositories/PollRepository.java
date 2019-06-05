@@ -35,7 +35,7 @@ public class PollRepository {
                 preparedStatement.setDate(7, new Date(System.currentTimeMillis()));
                 preparedStatement.setDate(8, null);
             }
-        }
+        };
         int success = jdbcTemplate.update("INSERT INTO `poll` VALUE (?, ?, ?, ?, ?, ?, ?, ?)", preparedStatementSetter);
     }
 
@@ -58,7 +58,7 @@ public class PollRepository {
             public int getBatchSize() {
                 return choiceList.size();
             }
-        }
+        };
         jdbcTemplate.batchUpdate("INSERT INTO `poll_choice` VALUE (?, ?, ?, ?, ?, ?)", batchPreparedStatementSetter);
     }
 }
