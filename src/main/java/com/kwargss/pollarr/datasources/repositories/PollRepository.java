@@ -20,7 +20,7 @@ public class PollRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public void createSimplePoll(String name, String desc) {
+    public String createSimplePoll(String name, String desc) {
         // uuid should be in the util instead
         String uuid = "aaa";
         PreparedStatementSetter preparedStatementSetter = new PreparedStatementSetter() {
@@ -36,7 +36,8 @@ public class PollRepository {
                 preparedStatement.setDate(8, null);
             }
         };
-        int success = jdbcTemplate.update("INSERT INTO `poll` VALUE (?, ?, ?, ?, ?, ?, ?, ?)", preparedStatementSetter);
+        jdbcTemplate.update("INSERT INTO `poll` VALUE (?, ?, ?, ?, ?, ?, ?, ?)", preparedStatementSetter);
+        return uuid;
     }
 
     public void createChoice(String pollId, List<ChoiceRequest> choiceList) {

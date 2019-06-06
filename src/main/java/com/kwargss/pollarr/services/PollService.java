@@ -12,7 +12,8 @@ public class PollService {
     private PollRepository pollRepository;
 
     public void create(CreatePollRequest pollRequest) {
-//        pollRepository.createSimplePoll(pollRequest);
+        String pollId = pollRepository.createSimplePoll(pollRequest.getPollName(), pollRequest.getDescription());
+        pollRepository.createChoice(pollId, pollRequest.getChoiceList());
     }
 
 }
