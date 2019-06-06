@@ -2,6 +2,7 @@ package com.kwargss.pollarr.datasources.repositories;
 
 import com.kwargss.pollarr.datasources.enums.PollStatus;
 import com.kwargss.pollarr.requests.ChoiceRequest;
+import com.kwargss.pollarr.utils.HashUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
@@ -20,9 +21,11 @@ public class PollRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private HashUtils hashUtils;
+
     public String createSimplePoll(String name, String desc) {
-        // uuid should be in the util instead
-        String uuid = "aaa";
+        String uuid = hashUtils.generateUUID();
         PreparedStatementSetter preparedStatementSetter = new PreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement) throws SQLException {
@@ -41,10 +44,10 @@ public class PollRepository {
     }
 
     public void createChoice(String pollId, List<ChoiceRequest> choiceList) {
-        String uuid = "aaa";
         BatchPreparedStatementSetter batchPreparedStatementSetter = new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
+                String uuid = hashUtils.generateUUID();
                 ChoiceRequest choiceRequest = choiceList.get(i);
                 preparedStatement.setString(1, uuid);
                 preparedStatement.setString(2, pollId);
