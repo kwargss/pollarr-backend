@@ -1,7 +1,6 @@
 package com.kwargss.pollarr.controllers;
 
 import com.kwargss.pollarr.requests.CreatePollRequest;
-import com.kwargss.pollarr.response.BaseResponse;
 import com.kwargss.pollarr.services.PollService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,8 +18,8 @@ public class PollController {
     private PollService pollService;
 
     @PostMapping
-    public ResponseEntity<BaseResponse<Boolean>> createPoll(@RequestBody CreatePollRequest request) {
+    public ResponseEntity<Boolean> createPoll(@RequestBody CreatePollRequest request) {
         pollService.create(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new BaseResponse<>(true));
+        return ResponseEntity.status(HttpStatus.CREATED).body(true);
     }
 }
