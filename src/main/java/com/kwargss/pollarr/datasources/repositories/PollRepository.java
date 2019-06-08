@@ -63,6 +63,6 @@ public class PollRepository {
                 return choiceList.size();
             }
         };
-        jdbcTemplate.batchUpdate("INSERT INTO `poll_choice` VALUE (?, ?, ?, ?, ?, ?)", batchPreparedStatementSetter);
+        jdbcTemplate.batchUpdate("INSERT INTO `poll_choice` VALUE (?, ?, ?, ?, ?, ?, ?)", batchPreparedStatementSetter);
     }
 }

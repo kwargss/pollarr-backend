@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ChoiceRequest {
-    @JsonProperty("choice_name")
+    @JsonProperty("name")
     private String choiceName;
 
     @JsonProperty("description")

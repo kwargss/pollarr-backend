@@ -10,13 +10,13 @@ import java.util.List;
 @Setter
 public class CreatePollRequest {
 
-    @JsonProperty("poll_name")
+    @JsonProperty("name")
     private String pollName;
 
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("choiceList")
+    @JsonProperty("choices")
     private List<ChoiceRequest> choiceList;
 
 }
